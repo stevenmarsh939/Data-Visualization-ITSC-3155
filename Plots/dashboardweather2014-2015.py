@@ -19,10 +19,6 @@ data_linechart = [go.Scatter(x=df1['date'], y=df1['actual_max_temp'], mode='line
 layout = go.Layout(title='Max Temperature of Each Month for 2014 - 2015', xaxis_title="Month for 2014 - 2015",
                    yaxis_title="Temperature")
 
-# Plot the figure and saving in a html file
-#fig = go.Figure(data=data_linechart, layout=layout)
-#pyo.plot(fig, filename='linechart.html')
-
 # Multi-Line Chart
 df2 = pd.read_csv('..\Datasets\Weather2014-15.csv')
 df2['date'] = pd.to_datetime(df2['date'])
@@ -34,8 +30,7 @@ data_multilinechart = [trace1, trace2, trace3]
 
 layout = go.Layout(title="Temps", xaxis_title="Date", yaxis_title="Temps")
 
-#fig = go.Figure(data=data_multilinechart, layout=layout)
-#pyo.plot(fig, filename='tempmultiline.html')
+
 
 # Bubble Chart
 df3 = pd.read_csv('../Datasets/Weather2014-15.csv')
@@ -53,8 +48,6 @@ data_bubblechart = [
 ]
 layout = go.Layout(title='Max and Min temp per Month', xaxis_title="Max temp",
                    yaxis_title="Min temp", hovermode='closest')
-#fig = go.Figure(data=data_bubblechart, layout=layout)
-#pyo.plot(fig, filename='WeatherBubblechart.html')
 
 # Heatmap
 # Preparing data
@@ -68,10 +61,6 @@ data_heatmap = [go.Heatmap(x=df4['day'],
 # Preparing layout
 layout = go.Layout(title='Max Temperature on Day of Week and Month of Year', xaxis_title="Day of Week",
                    yaxis_title="Month")
-
-# Plot the figure and saving in a html file
-#fig = go.Figure(data=data_heatmap, layout=layout)
-#pyo.plot(fig, filename='heatmapweather.html')
 
 # Layout
 app.layout = html.Div(children=[
